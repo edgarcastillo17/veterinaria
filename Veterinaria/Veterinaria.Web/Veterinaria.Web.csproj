@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202005230210185_StructDatabase.Designer.cs">
       <DependentUpon>202005230210185_StructDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005230303528_UpdatePets.cs" />
+    <Compile Include="Migrations\202005230303528_UpdatePets.Designer.cs">
+      <DependentUpon>202005230303528_UpdatePets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Consult.cs" />
@@ -403,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005230210185_StructDatabase.resx">
       <DependentUpon>202005230210185_StructDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005230303528_UpdatePets.resx">
+      <DependentUpon>202005230303528_UpdatePets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

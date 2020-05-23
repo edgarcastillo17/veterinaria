@@ -26,10 +26,30 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contacto</a>
                 </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Users")">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Veterinaries")">Médicos</a>
+                    </li>
+                }
+                @if (User.IsInRole("Veterinary"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Consults")">Consultas</a>
+                    </li>
+                }
+                @if (User.IsInRole("Owner"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Pets")">Mascotas</a>
+                    </li>
+                }
             </ul>
             <span class="navbar-text">
-                <a href="@Url.Action("Register","Account") ">Registro</a>
-                <a href="@Url.Action("Login","Account")">Iniciar Sesión</a>
+                @Html.Partial("_LoginPartial")
             </span>
         </div>
     </nav>
