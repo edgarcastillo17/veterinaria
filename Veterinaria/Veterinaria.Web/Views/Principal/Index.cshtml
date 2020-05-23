@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Inicio";
 }
 
@@ -32,6 +31,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+</div>
+
+<div>
+    <p class="text-center display-4"><i class="fas fa-quote-left"></i><br />Nuestros compañeros perfectos nunca tienen menos de cuatro patas.</p>
 </div>
 
 <div class="row p-3">
@@ -69,6 +72,114 @@
     </div>
 </div>
 
-<div>
-    <p class="text-center display-4"><i class="fas fa-quote-left"></i><br />Nuestros compañeros perfectos nunca tienen menos de cuatro patas.</p>
+<div id="about">
+    <p class="text-center display-4"><i class="fas fa-info"></i><br />Acerca de nosotros</p>
+</div>
+
+<div class="row justify-content-between">
+    <div class="col-md-4">
+        <div class="card text-justify" style="width: 18rem;">
+            <img src="~/Images/Principal/certification.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Certificación</h5>
+                <p class="card-text">Contamos con los mejores especialistas en su área, capacitados en los mejores programas.</p>
+                <a href="https://www.wikipedia.org/" target="_blank" class="btn btn-outline-dark"><i class="fas fa-info-circle"></i> Leer más</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-justify" style="width: 18rem;">
+            <img src="~/Images/Principal/building.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Edificio</h5>
+                <p class="card-text">Visítanos para conocer nuestras excelentes instalaciones para la comodidad de nuestros clientes y sus dueños.</p>
+                <a href="https://www.google.com/maps" target="_blank" class="btn btn-outline-primary"><i class="fas fa-map-marker-alt"></i> Ir al mapa</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-justify" style="width: 18rem;">
+            <img src="~/Images/Principal/origin.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Origen</h5>
+                <p class="card-text">Todo comenzó con el sueño de unas pocas personas en búsqueda de ayudar a los animales indefensos.</p>
+                <a href="https://es.wix.com/" target="_blank" class="btn btn-outline-dark"><i class="fas fa-info-circle"></i> Leer más</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <br />
+    <p class="text-center display-4"><i class="fas fa-mail-bulk"></i><br />Contacto</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-7 text-center">
+            <form class="flex-fill">
+                <div class="input-group mb-3 form-inline justify-content-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="emailcontact"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Correo electrónico" aria-label="Recipient's username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3 form-inline justify-content-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="namecontact"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Nombre completo" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3 form-inline justify-content-center">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Comentario</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal"><i class="fas fa-paper-plane"></i> Enviar</button>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">¡Gracias!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Agradecemos tu comentario, tan pronto como sea posible alguien
+                                    se contactará contigo.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mb-3">¡Visita nuestras redes!</h4>
+
+                <div class="text-center">
+                    <a href="https://www.facebook.com" target="_blank" class="icono"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" class="icono"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="icono"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" class="icono"><i class="fab fa-linkedin fa-2x"></i></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-5">
+            <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.8969514799924!2d-116.98899328482429!3d32.52889908104754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94875c00b2a3d%3A0x281526cf22a3e2cc!2sInstituto%20Tecnol%C3%B3gico%20de%20Tijuana!5e0!3m2!1ses-419!2smx!4v1582153715853!5m2!1ses-419!2smx" width="425" height="300" frameborder="0" style="border:0;"></iframe>
+            <div class="row justify-content-center">
+                <p class="contacto"><i class="fas fa-phone"></i> Teléfono: <br />664-332-4589</p>
+                <p class="contacto"><i class="fas fa-envelope-open-text"></i> Correo Electrónico:<br />veterinary@mail.com</p>
+            </div>
+        </div>
+    </div>
 </div>

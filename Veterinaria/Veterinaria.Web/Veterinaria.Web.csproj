@@ -1843,8 +1843,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Principal\bird.jpg" />
+    <Content Include="Images\Principal\building.jpg" />
     <Content Include="Images\Principal\cat.jpg" />
+    <Content Include="Images\Principal\certification.jpg" />
     <Content Include="Images\Principal\dog.jpg" />
+    <Content Include="Images\Principal\origin.jpg" />
     <Content Include="Images\Principal\rabbit.jpg" />
     <Content Include="Images\Principal\turtle.jpg" />
     <Content Include="Images\Principal\veterinary1.jpg" />
@@ -1941,6 +1944,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />
