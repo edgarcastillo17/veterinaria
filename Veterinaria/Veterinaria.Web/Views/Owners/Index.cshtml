@@ -1,27 +1,95 @@
 ﻿@model IEnumerable<Veterinaria.Web.Models.Owner>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Clientes";
 }
 
-<h2>Index</h2>
+<h2 class="text-center display-4">Clientes</h2>
+<br />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
+<a href="@Url.Action("Create","Owners")" class="btn btn-sm btn-dark">
+    <span class="text-white-50"><i class="fas fa-plus"></i></span>
+    <span class="text-white"> Añadir</span>
+</a>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<br />
+<br />
+
+<table class="table" id="owners">
+    <thead>
+        <tr>
+            <th>
+                Id:
+            </th>
+            <th>
+                Nombre:
+            </th>
+            <th>
+                Apellidos:
+            </th>
+            <th>
+                Correo:
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.ApplicationUser.FirstName
+                </td>
+                <td>
+                    @item.ApplicationUser.Lastname
+                </td>
+                <td>
+                    @item.ApplicationUser.Email
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit","Owners",new { id=item.Id})" class="btn btn-sm btn-primary"><i class="fas fa-pen"></i></a>
+                    <a href="@Url.Action("Delete","Owners",new { id=item.Id})" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $('#owners').DataTable({
+                "language": {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+        });
+    </script>
+}

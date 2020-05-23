@@ -1,82 +1,31 @@
 ﻿@model Veterinaria.Web.Models.Pet
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Pet</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PetType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PetType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Race)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Race)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div class="row justify-content-center">
+        <div class="card shadow" style="width: 18rem; margin:1rem;">
+            <img src="https://nebula.wsimg.com/aa23c2a853264ffd5608bae4c3b3ab62?AccessKeyId=75084DE0FCCF93BBA482&disposition=0&alloworigin=1" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title font-italic text-center">@Model.Name</h5>
+                <p class="card-text text-center">@Model.PetType | @Model.Race</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Color: @Model.Color</li>
+                <li class="list-group-item">Altura: @Model.Height m.</li>
+                <li class="list-group-item">Peso: @Model.Weight kg.</li>
+                <li class="list-group-item">Nacimiento: @Convert.ToString(string.Format("{0:dd/MM/yyyy}", Model.BirthDate))</li>
+            </ul>
+            <div class="card-body text-center">
+                <a href="@Url.Action("Index","Pets", new { id = Model.Id})" class="btn btn-sm btn-dark">
+                    <span class="text-white-50"><i class="fas fa-arrow-alt-circle-left"></i></span>
+                    <span class="text-white"> Regresar</span>
+                </a>
+                <a href="@Url.Action("Delete","Pets", new { id = Model.Id})" class="btn btn-sm btn-danger">
+                    <span class="text-white-50"><i class="fas fa-trash"></i></span>
+                    <span class="text-white"> Eliminar</span>
+                </a>
+            </div>
+        </div>
+    </div>

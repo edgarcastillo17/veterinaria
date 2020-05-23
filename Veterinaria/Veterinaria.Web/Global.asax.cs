@@ -19,6 +19,7 @@ namespace Veterinaria.Web
             this.CheckRoles();
             Utilities.CheckSuperUser();
             Utilities.CheckClientDefault();
+            Utilities.CheckEmployee();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
