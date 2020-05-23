@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D2DB74B-E0B6-4B8E-A5C3-F9B6DD59E5C8}</ProjectGuid>
+    <ProjectGuid>{516219D1-F5E1-4AF3-B186-E5C7933F6EC6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Veterinaria.Common</RootNamespace>
