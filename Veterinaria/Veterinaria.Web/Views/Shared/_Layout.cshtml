@@ -38,6 +38,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("Index","Veterinaries")">Médicos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("AllPets","Pets")">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Consults")">Consultas</a>
+                    </li>
                 }
                 @if (User.IsInRole("Veterinary"))
                 {
