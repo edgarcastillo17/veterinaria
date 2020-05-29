@@ -19,10 +19,10 @@
     @foreach (var item in Model)
     {
         <div class="card shadow" style="width: 18rem; margin:1rem;">
-            <img src="https://nebula.wsimg.com/aa23c2a853264ffd5608bae4c3b3ab62?AccessKeyId=75084DE0FCCF93BBA482&disposition=0&alloworigin=1" class="card-img-top" alt="...">
+            <img src="@Url.Action("GetImage","Pets", new { id = item.Id})" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title font-italic text-center">@item.Name</h5>
-                <p class="card-text text-center">@item.PetType | @item.Race</p>
+                <p class="card-text text-center">@item.PetType, @item.Race</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Color: @item.Color</li>

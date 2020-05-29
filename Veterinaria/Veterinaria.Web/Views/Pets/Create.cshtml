@@ -11,7 +11,7 @@
     <div class="col-md-5">
         <div class="card shadow" style="width:25rem; margin:1rem;">
             <div class="card-header bg-primary text-white text-center">Información</div>
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("Create", "Pets", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
 
@@ -78,6 +78,14 @@
                             <div class="col-md-10">
                                 @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold">Foto:</label>
+                            <div class="col-md-10">
+                                <input type="file" name="ImageLoad" value="" class="btn" />
+                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
                             </div>
                         </div>
 

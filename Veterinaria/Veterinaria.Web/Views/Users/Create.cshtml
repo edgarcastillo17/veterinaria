@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h2 class="text-center display-4">Añade un usuario</h2>
+<br />
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow" style="width:25rem; margin:1rem;">
+            <div class="card-header bg-primary text-white text-center">Información</div>
+                <div class="card-body">
+                    <div class="form-horizontal">
+                        <form action="@Url.Action("Create","Users")" method="post">
+
+                            <div class="form-group">
+                                <label class="col-md-4">Email</label>
+                                <div class="col-md-10">
+                                    <input type="email" name="Email" value="" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">Contraseña</label>
+                                <div class="col-md-10">
+                                    <input type="password" name="Password" value="" class="form-control" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">Rol</label>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="RolName" required>
+                                        <option>Elige un rol</option>
+                                        <option value="Admin">Administrador</option>
+                                        <option value="Veterinary">Veterinario</option>
+                                        <option value="Owner">Dueño</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-sm btn-primary">
+                                    <span class="text-white-50"><i class="fas fa-plus"></i></span>
+                                    <span class="text-white"> Guardar</span>
+                                </button>
+                                <a href="@Url.Action("Index","Users")" class="btn btn-sm btn-dark">
+                                    <span class="text-white-50"><i class="fas fa-arrow-alt-circle-left"></i></span>
+                                    <span class="text-white"> Regresar</span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
