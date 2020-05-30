@@ -63,8 +63,8 @@
                 @Html.DisplayFor(modelItem => item.Race)
             </td>
             <td>
-                <a href="@Url.Action("Edit","Owners",new { id=item.Id})" class="btn btn-sm btn-primary"><i class="fas fa-pen"></i></a>
-                <a href="@Url.Action("Delete","Owners",new { id=item.Id})" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                <a href="@Url.Action("Edit","Pets",new { id=item.Id})" class="btn btn-sm btn-primary"><i class="fas fa-pen"></i></a>
+                <a href="@Url.Action("Delete","Pets",new { id=item.Id})" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
         }
