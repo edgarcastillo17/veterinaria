@@ -11,10 +11,8 @@
     <div class="col-md-5">
         <div class="card shadow" style="width:25rem; margin:1rem;">
             <div class="card-header bg-primary text-white text-center">Información</div>
-            @using (Html.BeginForm("Create", "Pets", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
+            <form action="@Url.Action("Create","Pets")" method="post" enctype="multipart/form-data">
                 @Html.AntiForgeryToken()
-
                 <div class="card-body">
                     <div class="form-horizontal">
                         <div class="form-group">
@@ -84,8 +82,7 @@
                         <div class="form-group">
                             <label class="font-weight-bold">Foto:</label>
                             <div class="col-md-10">
-                                <input type="file" name="ImageLoad" value="" class="btn" />
-                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                <input type="file" name="pimage" value="" class="form-control-file" />
                             </div>
                         </div>
 
@@ -101,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-            }
+            </form>
         </div>
     </div>
 </div>

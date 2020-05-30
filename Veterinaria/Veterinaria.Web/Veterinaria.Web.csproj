@@ -206,6 +206,22 @@
     <Compile Include="Migrations\202005282203323_PetPicture.Designer.cs">
       <DependentUpon>202005282203323_PetPicture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005292349171_UpdatePetImage.cs" />
+    <Compile Include="Migrations\202005292349171_UpdatePetImage.Designer.cs">
+      <DependentUpon>202005292349171_UpdatePetImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005300008315_UpdateImagePet.cs" />
+    <Compile Include="Migrations\202005300008315_UpdateImagePet.Designer.cs">
+      <DependentUpon>202005300008315_UpdateImagePet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005300021176_DeleteImage.cs" />
+    <Compile Include="Migrations\202005300021176_DeleteImage.Designer.cs">
+      <DependentUpon>202005300021176_DeleteImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005300022281_AddPetImage.cs" />
+    <Compile Include="Migrations\202005300022281_AddPetImage.Designer.cs">
+      <DependentUpon>202005300022281_AddPetImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Consult.cs" />
@@ -2097,6 +2113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Img\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -2127,6 +2144,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005282203323_PetPicture.resx">
       <DependentUpon>202005282203323_PetPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005292349171_UpdatePetImage.resx">
+      <DependentUpon>202005292349171_UpdatePetImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300008315_UpdateImagePet.resx">
+      <DependentUpon>202005300008315_UpdateImagePet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300021176_DeleteImage.resx">
+      <DependentUpon>202005300021176_DeleteImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300022281_AddPetImage.resx">
+      <DependentUpon>202005300022281_AddPetImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

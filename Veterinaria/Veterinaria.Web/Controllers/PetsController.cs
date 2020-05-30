@@ -3,13 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using Veterinaria.Web.Models;
 
@@ -61,29 +57,19 @@ namespace Veterinaria.Web.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Pet pet)
+        public ActionResult Create(Pet pet, HttpPostedFileBase pimage)
         {
-            HttpPostedFileBase FileBase = Request.Files[0];
-
-            if (FileBase.ContentLength == 0)
-            {
-                ModelState.AddModelError("Image", "Es necesario seleccionar una imagen.");
-            }
-            else
-            {
-                if (FileBase.FileName.EndsWith(".jpg"))
-                {
-                    WebImage image = new WebImage(FileBase.InputStream);
-                    pet.Image = image.GetBytes();
-                }
-                else
-                {
-                    ModelState.AddModelError("Image", "Procura añadir una imagen en formato .jpg");
-                }
-            }
 
             if (ModelState.IsValid)
             {
+                if (pimage != null)
+                {
+                    var perfil = System.IO.Path.GetFileName(pimage.FileName);
+                    var direccion = "~/Content/Img/" + pet.Name + "_" + perfil;
+                    pimage.SaveAs(Server.MapPath(direccion));
+                    pet.Image = pet.Name + "_" + perfil;
+                }
+
                 var userId = User.Identity.GetUserId();
                 var own = db.Owners.Where(o => o.UserId == userId).FirstOrDefault();
                 pet.OwnerId = own.Id;
@@ -118,25 +104,6 @@ namespace Veterinaria.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Pet pet)
         {
-            byte[] actualimage = null;
-
-            HttpPostedFileBase FileBase = Request.Files[0];
-            if (FileBase.ContentLength == 0)
-            {
-                actualimage = db.Pets.SingleOrDefault(p => p.Id == pet.Id).Image;
-            }
-            else
-            {
-                if (FileBase.FileName.EndsWith(".jpg"))
-                {
-                    WebImage image = new WebImage(FileBase.InputStream);
-                    pet.Image = image.GetBytes();
-                }
-                else
-                {
-                    ModelState.AddModelError("Image", "Procura añadir una imagen en formato .jpg");
-                }
-            }
 
             if (ModelState.IsValid)
             {
@@ -180,21 +147,6 @@ namespace Veterinaria.Web.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult GetImage(int id)
-        {
-            Pet productsk = db.Pets.Find(id);
-            byte[] byteImage = productsk.Image;
-
-            MemoryStream memoryStream = new MemoryStream(byteImage);
-            Image image = Image.FromStream(memoryStream);
-
-            memoryStream = new MemoryStream();
-            image.Save(memoryStream, ImageFormat.Jpeg);
-            memoryStream.Position = 0;
-
-            return File(memoryStream, "image/jpg");
         }
     }
 }
